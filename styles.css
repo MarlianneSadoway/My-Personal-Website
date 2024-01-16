@@ -34,11 +34,12 @@ div.content {
     font-style: oblique;
     font-size: 40px;
     font-family: Arial;
+    color: white;
 }
 
 li.menu-item {
     font-style: italic;
-    float: right;
+    float: left;
     font-size: 28px;
 }
 
@@ -50,7 +51,11 @@ ul {
   
 li a {
     padding: 10px;
-    color: white;
+    color: lightgray;
+}
+
+li a:hover {
+    color: gray;
 }
 
 img.img-border {
@@ -76,7 +81,18 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: rgb(63, 62, 70);
-    color: white;
+}
+
+/* Stack items in header vertically on small and medium devices, 1028px is before the size where the head-title and nav do not fit horizontally. */
+@media only screen and (max-width: 1028px) {
+    header {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    li.menu-item {
+        float: none;
+    }
 }
 
 footer {
@@ -98,7 +114,7 @@ a.external-link:active {
     color: black;
 }
 a.external-link:hover {
-    color: green;
+    color: rgb(51, 94, 235);
 }
 a.external-link:visited {
     color: purple;
